@@ -27,37 +27,40 @@
   </head>
   <body>
     <main>
-       <!-- 1. TOP UTILITY BAR -->
+ <!-- TOP ANNOUNCEMENT / UTILITY BAR -->
 <div class="top-bar">
   <div class="container top-bar-container">
-    <div class="top-left">
-      <span class="badge-status">
-        <span class="pulse-dot"></span> Certified Whirlpool Appliance Specialists
-      </span>
-      <span class="divider">|</span>
-      <span class="location-tag">
-        <i class="fas fa-map-marker-alt"></i> Johannesburg & Surrounds
-        (Randburg, Sandton, Midrand, Rosebank)
-      </span>
+    
+    <!-- Emergency Tag -->
+    <div class="top-bar-badge">
+      <span class="pulse-dot green"></span>
+      <span>24/7 Emergency Repairs</span>
     </div>
-    <div class="top-right">
-      <a href="tel:+27110000000" class="top-link phone-link">
+
+    <!-- Location List (Desktop Only) -->
+    <div class="top-bar-location desktop-only">
+      <i class="fas fa-map-marker-alt text-blue"></i>
+      <span>Johannesburg & Surrounds (Randburg, Sandton, Midrand, Rosebank)</span>
+    </div>
+
+    <!-- Contact Quick Links -->
+    <div class="top-bar-contact">
+      <!-- Phone number visible on desktop only -->
+      <a href="tel:+27110000000" class="top-link desktop-only">
         <i class="fas fa-phone-alt"></i> +27 11 000 0000
       </a>
-      <a
-        href="https://wa.me/27110000000"
-        target="_blank"
-        class="top-link whatsapp-link"
-      >
+      
+      <!-- WhatsApp link visible on both mobile and desktop -->
+      <a href="https://wa.me/27110000000" class="top-link whatsapp-link" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a
-        href="mailto:info@eazyappliancerepairs.co.za"
-        class="top-link mail-link"
-      >
-        <i class="far fa-envelope"></i> info@eazyappliancerepairs.co.za
+
+      <!-- Email address visible on desktop only -->
+      <a href="mailto:info@eazyappliancerepairs.co.za" class="top-link desktop-only">
+        <i class="fas fa-envelope"></i> info@eazyappliancerepairs.co.za
       </a>
     </div>
+
   </div>
 </div>
 
@@ -177,46 +180,48 @@
     </button>
   </div>
 
-  <!-- 3. MOBILE MENU DRAWER -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-nav-list">
-      <a href="../index.html" class="mobile-nav-link">Home</a>
-      <a href="../about.html" class="mobile-nav-link">About Us</a>
+ <!-- MOBILE MENU DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-nav-list">
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+    <a href="../about.html" class="mobile-nav-link">About Us</a>
 
-      <div class="mobile-section-title">Brands</div>
-      <a href="../brands.html" class="mobile-nav-link sub">All Brands We Service</a>
-      <a href="samsung-repairs.html" class="mobile-nav-link sub">Samsung Repairs</a>
-      <a href="lg-repairs.html" class="mobile-nav-link sub">LG Repairs</a>
-      <a href="whirlpool-repairs.html" class="mobile-nav-link sub active">Whirlpool Repairs</a>
-      <a href="bosch-repairs.html" class="mobile-nav-link sub">Bosch Repairs</a>
-      <a href="defy-repairs.html" class="mobile-nav-link sub">Defy Repairs</a>
+    <div class="mobile-section-title">Brands</div>
+    <a href="../brands.html" class="mobile-nav-link sub">All Brands We Service</a>
+    <a href="samsung-repairs.html" class="mobile-nav-link sub">Samsung Repairs</a>
+    <a href="lg-repairs.html" class="mobile-nav-link sub">LG Repairs</a>
+    <a href="whirlpool-repairs.html" class="mobile-nav-link sub">Whirlpool Repairs</a>
+    <a href="bosch-repairs.html" class="mobile-nav-link sub">Bosch Repairs</a>
+    <a href="defy-repairs.html" class="mobile-nav-link sub">Defy Repairs</a>
+    <a href="speed-queen-repairs.html" class="mobile-nav-link sub active">Speed Queen Repairs</a>
+    <a href="smeg-repairs.html" class="mobile-nav-link sub">Smeg Repairs</a>
 
-      <div class="mobile-section-title">Services</div>
-      <a href="../services.html" class="mobile-nav-link sub">All Services</a>
-      <a href="../fridge-repairs.html" class="mobile-nav-link sub">Fridge & Freezer Repairs</a>
-      <a href="../washing-machine-repairs.html" class="mobile-nav-link sub">Washing Machine Repairs</a>
-      <a href="../tumble-dryer-repairs.html" class="mobile-nav-link sub">Tumble Dryer Repairs</a>
-      <a href="../dishwasher-repairs.html" class="mobile-nav-link sub">Dishwasher Repairs</a>
+    <div class="mobile-section-title">Services</div>
+    <a href="../services.html" class="mobile-nav-link sub">All Services</a>
+    <a href="../fridge-repairs.html" class="mobile-nav-link sub">Fridge & Freezer Repairs</a>
+    <a href="../washing-machine-repairs.html" class="mobile-nav-link sub">Washing Machine Repairs</a>
+    <a href="../tumble-dryer-repairs.html" class="mobile-nav-link sub">Tumble Dryer Repairs</a>
+    <a href="../dishwasher-repairs.html" class="mobile-nav-link sub">Dishwasher Repairs</a>
 
-      <div class="mobile-section-title">Service Areas</div>
-      <a href="../service-areas.html" class="mobile-nav-link sub">All Service Areas</a>
-      <a href="../areas/randburg.html" class="mobile-nav-link sub">Randburg</a>
-      <a href="../areas/midrand.html" class="mobile-nav-link sub">Midrand</a>
-      <a href="../areas/sandton.html" class="mobile-nav-link sub">Sandton</a>
-      <a href="../areas/rosebank.html" class="mobile-nav-link sub">Rosebank</a>
+    <div class="mobile-section-title">Service Areas</div>
+    <a href="../service-areas.html" class="mobile-nav-link sub">All Service Areas</a>
+    <a href="../areas/randburg.html" class="mobile-nav-link sub">Randburg</a>
+    <a href="../areas/midrand.html" class="mobile-nav-link sub">Midrand</a>
+    <a href="../areas/sandton.html" class="mobile-nav-link sub">Sandton</a>
+    <a href="../areas/rosebank.html" class="mobile-nav-link sub">Rosebank</a>
 
-      <div class="mobile-section-title">Resources & Legal</div>
-      <a href="../blog.html" class="mobile-nav-link sub">Blog</a>
-      <a href="../faqs.html" class="mobile-nav-link sub">FAQs</a>
-      <a href="../reviews.html" class="mobile-nav-link sub">Reviews</a>
-      <a href="../warranty.html" class="mobile-nav-link sub">Warranty Info</a>
-      <a href="../contact.html" class="mobile-nav-link">Contact Us</a>
+    <div class="mobile-section-title">Resources & Legal</div>
+    <a href="../blog.html" class="mobile-nav-link sub">Advice & Articles</a>
+    <a href="../faqs.html" class="mobile-nav-link sub">FAQs</a>
+    <a href="../reviews.html" class="mobile-nav-link sub">Reviews</a>
+    <a href="../warranty.html" class="mobile-nav-link sub">Warranty Info</a>
+    <a href="../contact.html" class="mobile-nav-link">Contact Us</a>
 
-      <div class="mobile-btn-wrapper">
-        <a href="#booking" class="pill-btn full-width">Easy Online Booking</a>
-      </div>
+    <div class="mobile-btn-wrapper">
+      <a href="#booking" class="pill-btn full-width text-center" style="display:block; padding: 12px; background:#4a7cf6; color:#fff; border-radius:8px; text-decoration:none; font-weight:700;">Easy Online Booking</a>
     </div>
   </div>
+</div>
 </header>
 <!-- 1. WHIRLPOOL HERO BANNER SECTION -->
 <section class="page-hero whirlpool-hero">

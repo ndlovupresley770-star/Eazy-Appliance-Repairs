@@ -66,72 +66,83 @@ a {
   margin: 0 auto;
   padding: 0 1.25rem;
 }
-
 /* ==========================================================================
-   2. Top Utility Bar
+   TOP BAR BASE & MOBILE OPTIMIZATION
    ========================================================================== */
+
 .top-bar {
-  background-color: var(--color-topbar-bg);
-  color: var(--color-text-sub-light);
-  font-size: 0.75rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--color-border-dark);
+  background-color: #0b132b;
+  color: #94a3b8;
+  font-size: 0.775rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .top-bar-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 16px;
 }
 
-.top-left, .top-right {
+.top-bar-contact {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.badge-status {
-  color: #34d399;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-}
-
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  background-color: #34d399;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #34d399;
-}
-
-.divider {
-  color: #334155;
+  gap: 14px;
 }
 
 .top-link {
-  color: var(--color-text-sub-light);
-  transition: var(--transition);
-  display: flex;
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 6px;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .top-link:hover {
-  color: var(--color-blue-primary);
+  color: #38bdf8;
 }
 
-.phone-link {
-  color: var(--color-text-light);
-  font-weight: 600;
+.top-link.whatsapp-link {
+  color: #25d366;
 }
 
-.whatsapp-link {
-  color: #4ade80;
+/* --------------------------------------------------------------------------
+   MOBILE RESPONSIVE RULES (Max Width 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  
+  /* 1. Hide desktop-only text (Suburb list & Email address) */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* 2. Compact single-row layout for mobile */
+  .top-bar {
+    padding: 6px 12px;
+  }
+
+  .top-bar-container {
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .top-bar-badge span:not(.pulse-dot) {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #4ade80;
+  }
+
+  .top-bar-contact {
+    gap: 10px;
+  }
+
+  .top-link {
+    font-size: 0.725rem;
+  }
+
 }
 
 /* ==========================================================================

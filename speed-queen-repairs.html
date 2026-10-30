@@ -27,37 +27,40 @@
   </head>
   <body>
     <main>
-        <!-- 1. TOP UTILITY BAR -->
+ <!-- TOP ANNOUNCEMENT / UTILITY BAR -->
 <div class="top-bar">
   <div class="container top-bar-container">
-    <div class="top-left">
-      <span class="badge-status">
-        <span class="pulse-dot"></span> Certified Speed Queen Appliance Specialists
-      </span>
-      <span class="divider">|</span>
-      <span class="location-tag">
-        <i class="fas fa-map-marker-alt"></i> Johannesburg & Surrounds
-        (Randburg, Sandton, Midrand, Rosebank)
-      </span>
+    
+    <!-- Emergency Tag -->
+    <div class="top-bar-badge">
+      <span class="pulse-dot green"></span>
+      <span>24/7 Emergency Repairs</span>
     </div>
-    <div class="top-right">
-      <a href="tel:+27110000000" class="top-link phone-link">
+
+    <!-- Location List (Desktop Only) -->
+    <div class="top-bar-location desktop-only">
+      <i class="fas fa-map-marker-alt text-blue"></i>
+      <span>Johannesburg & Surrounds (Randburg, Sandton, Midrand, Rosebank)</span>
+    </div>
+
+    <!-- Contact Quick Links -->
+    <div class="top-bar-contact">
+      <!-- Phone number visible on desktop only -->
+      <a href="tel:+27110000000" class="top-link desktop-only">
         <i class="fas fa-phone-alt"></i> +27 11 000 0000
       </a>
-      <a
-        href="https://wa.me/27110000000"
-        target="_blank"
-        class="top-link whatsapp-link"
-      >
+      
+      <!-- WhatsApp link visible on both mobile and desktop -->
+      <a href="https://wa.me/27110000000" class="top-link whatsapp-link" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a
-        href="mailto:info@eazyappliancerepairs.co.za"
-        class="top-link mail-link"
-      >
-        <i class="far fa-envelope"></i> info@eazyappliancerepairs.co.za
+
+      <!-- Email address visible on desktop only -->
+      <a href="mailto:info@eazyappliancerepairs.co.za" class="top-link desktop-only">
+        <i class="fas fa-envelope"></i> info@eazyappliancerepairs.co.za
       </a>
     </div>
+
   </div>
 </div>
 
@@ -178,47 +181,48 @@
     </button>
   </div>
 
-  <!-- 3. MOBILE MENU DRAWER -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-nav-list">
-      <a href="../index.html" class="mobile-nav-link">Home</a>
-      <a href="../about.html" class="mobile-nav-link">About Us</a>
+ <!-- MOBILE MENU DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-nav-list">
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+    <a href="../about.html" class="mobile-nav-link">About Us</a>
 
-      <div class="mobile-section-title">Brands</div>
-      <a href="../brands.html" class="mobile-nav-link sub">All Brands We Service</a>
-      <a href="samsung-repairs.html" class="mobile-nav-link sub">Samsung Repairs</a>
-      <a href="lg-repairs.html" class="mobile-nav-link sub">LG Repairs</a>
-      <a href="whirlpool-repairs.html" class="mobile-nav-link sub">Whirlpool Repairs</a>
-      <a href="bosch-repairs.html" class="mobile-nav-link sub">Bosch Repairs</a>
-      <a href="speed-queen-repairs.html" class="mobile-nav-link sub active">Speed Queen Repairs</a>
-      <a href="defy-repairs.html" class="mobile-nav-link sub">Defy Repairs</a>
+    <div class="mobile-section-title">Brands</div>
+    <a href="../brands.html" class="mobile-nav-link sub">All Brands We Service</a>
+    <a href="samsung-repairs.html" class="mobile-nav-link sub">Samsung Repairs</a>
+    <a href="lg-repairs.html" class="mobile-nav-link sub">LG Repairs</a>
+    <a href="whirlpool-repairs.html" class="mobile-nav-link sub">Whirlpool Repairs</a>
+    <a href="bosch-repairs.html" class="mobile-nav-link sub">Bosch Repairs</a>
+    <a href="defy-repairs.html" class="mobile-nav-link sub">Defy Repairs</a>
+    <a href="speed-queen-repairs.html" class="mobile-nav-link sub active">Speed Queen Repairs</a>
+    <a href="smeg-repairs.html" class="mobile-nav-link sub">Smeg Repairs</a>
 
-      <div class="mobile-section-title">Services</div>
-      <a href="../services.html" class="mobile-nav-link sub">All Services</a>
-      <a href="../fridge-repairs.html" class="mobile-nav-link sub">Fridge & Freezer Repairs</a>
-      <a href="../washing-machine-repairs.html" class="mobile-nav-link sub">Washing Machine Repairs</a>
-      <a href="../tumble-dryer-repairs.html" class="mobile-nav-link sub">Tumble Dryer Repairs</a>
-      <a href="../dishwasher-repairs.html" class="mobile-nav-link sub">Dishwasher Repairs</a>
+    <div class="mobile-section-title">Services</div>
+    <a href="../services.html" class="mobile-nav-link sub">All Services</a>
+    <a href="../fridge-repairs.html" class="mobile-nav-link sub">Fridge & Freezer Repairs</a>
+    <a href="../washing-machine-repairs.html" class="mobile-nav-link sub">Washing Machine Repairs</a>
+    <a href="../tumble-dryer-repairs.html" class="mobile-nav-link sub">Tumble Dryer Repairs</a>
+    <a href="../dishwasher-repairs.html" class="mobile-nav-link sub">Dishwasher Repairs</a>
 
-      <div class="mobile-section-title">Service Areas</div>
-      <a href="../service-areas.html" class="mobile-nav-link sub">All Service Areas</a>
-      <a href="../areas/randburg.html" class="mobile-nav-link sub">Randburg</a>
-      <a href="../areas/midrand.html" class="mobile-nav-link sub">Midrand</a>
-      <a href="../areas/sandton.html" class="mobile-nav-link sub">Sandton</a>
-      <a href="../areas/rosebank.html" class="mobile-nav-link sub">Rosebank</a>
+    <div class="mobile-section-title">Service Areas</div>
+    <a href="../service-areas.html" class="mobile-nav-link sub">All Service Areas</a>
+    <a href="../areas/randburg.html" class="mobile-nav-link sub">Randburg</a>
+    <a href="../areas/midrand.html" class="mobile-nav-link sub">Midrand</a>
+    <a href="../areas/sandton.html" class="mobile-nav-link sub">Sandton</a>
+    <a href="../areas/rosebank.html" class="mobile-nav-link sub">Rosebank</a>
 
-      <div class="mobile-section-title">Resources & Legal</div>
-      <a href="../blog.html" class="mobile-nav-link sub">Blog</a>
-      <a href="../faqs.html" class="mobile-nav-link sub">FAQs</a>
-      <a href="../reviews.html" class="mobile-nav-link sub">Reviews</a>
-      <a href="../warranty.html" class="mobile-nav-link sub">Warranty Info</a>
-      <a href="../contact.html" class="mobile-nav-link">Contact Us</a>
+    <div class="mobile-section-title">Resources & Legal</div>
+    <a href="../blog.html" class="mobile-nav-link sub">Advice & Articles</a>
+    <a href="../faqs.html" class="mobile-nav-link sub">FAQs</a>
+    <a href="../reviews.html" class="mobile-nav-link sub">Reviews</a>
+    <a href="../warranty.html" class="mobile-nav-link sub">Warranty Info</a>
+    <a href="../contact.html" class="mobile-nav-link">Contact Us</a>
 
-      <div class="mobile-btn-wrapper">
-        <a href="#booking" class="pill-btn full-width">Easy Online Booking</a>
-      </div>
+    <div class="mobile-btn-wrapper">
+      <a href="#booking" class="pill-btn full-width text-center" style="display:block; padding: 12px; background:#4a7cf6; color:#fff; border-radius:8px; text-decoration:none; font-weight:700;">Easy Online Booking</a>
     </div>
   </div>
+</div>
 </header>
 <!-- 1. SPEED QUEEN HERO BANNER SECTION -->
 <section class="page-hero speedqueen-hero">
@@ -353,7 +357,7 @@
             </div>
           </div>
 
-          <!-- Interactive Category Grid -->
+          <!-- Interactive Category Grid (Exact Matches to Image) -->
           <div class="quick-options-list">
             <button class="selector-btn active" data-sq="toploader">
               <i class="fas fa-soap"></i> Top Loaders (TC5/TR5/TR7)
@@ -400,67 +404,126 @@
       </span>
       <h2>Specialized On-Site Speed Queen Repairs Across Gauteng</h2>
       <p class="section-subtitle">
-        We deliver factory-spec diagnostics and genuine replacement parts for Speed Queen washing machines, tumble dryers, dishwashers, and refrigeration units across Sandton, Randburg, Midrand, and Rosebank.
+        We deliver factory-spec diagnostics and genuine replacement parts for all Speed Queen residential and commercial laundry systems across Sandton, Randburg, Midrand, and Rosebank.
       </p>
     </div>
 
     <div class="verticals-wrapper">
 
-      <!-- VERTICAL 1: WASHING MACHINES (Image Left, Text Right) -->
+      <!-- VERTICAL 1: TOP-LOAD WASHERS (Image Left, Text Right) -->
       <div class="vertical-row image-left">
         <div class="vertical-image-col">
           <div class="image-frame">
             <img 
-              src="images/samsung-washing-machine.jpg" 
-              alt="Speed Queen Washing Machine Repair Gauteng" 
+              src="images/speed-queen-top-loader-washing-machine.jpg" 
+              alt="Speed Queen Top Load Washing Machine Repair Gauteng" 
               class="appliance-img"
             />
-            <span class="image-badge"><i class="fas fa-soap"></i> Top & Front-Load Washers</span>
+            <span class="image-badge"><i class="fas fa-soap"></i> TC5 / TR5 / TR7 Top Loaders</span>
           </div>
         </div>
         <div class="vertical-content-col">
-          <span class="vertical-tag">Washing Machines</span>
-          <h3>Speed Queen Washer Repairs</h3>
+          <span class="vertical-tag">Top-Load Laundry</span>
+          <h3>Speed Queen Top-Load Washer Repairs</h3>
           <p class="vertical-desc">
-            Complete repair services for Speed Queen top-loader (TC5, TR5, TR7) and front-loader (FF7) washing machines. We specialize in all-metal transmissions, drive belts, agitator splines, bearing seals, and drain pumps.
+            Complete repair services for Speed Queen TC5 Classic Clean and TR5/TR7 Perfect Wash top loaders. We specialize in heavy-duty all-metal transmissions, drive belts, agitator splines, and water fill solenoid valves.
           </p>
           
           <!-- Interactive Fault Selector -->
           <div class="interactive-fault-selector">
             <span class="selector-label">Select issue for instant estimate:</span>
             <div class="fault-btn-group">
-              <button class="fault-btn active" data-target="sq-washer-fault-1">Agitator Not Spinning</button>
-              <button class="fault-btn" data-target="sq-washer-fault-2">Loud Bearing Grinding</button>
-              <button class="fault-btn" data-target="sq-washer-fault-3">Unbalanced Vibrations (uB)</button>
+              <button class="fault-btn active" data-target="sq-top-fault-1">Agitator Not Spinning</button>
+              <button class="fault-btn" data-target="sq-top-fault-2">Unbalanced Vibrations (uB)</button>
+              <button class="fault-btn" data-target="sq-top-fault-3">Lid Lock Fault (dO)</button>
             </div>
             
             <div class="fault-details-box">
-              <div id="sq-washer-fault-1" class="fault-info-panel active">
+              <div id="sq-top-fault-1" class="fault-info-panel active">
                 <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Agitator Not Spinning:</strong> Stripped directional drive dogs or belt slippage. Replaced on-site with heavy-duty OEM parts.</p>
+                <p><strong>Agitator Not Spinning:</strong> Stripped agitator drive directional dogs or belt slippage. Replaced on-site with heavy-duty OEM parts.</p>
               </div>
-              <div id="sq-washer-fault-2" class="fault-info-panel">
-                <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Loud Bearing Grinding:</strong> Failed tub seal allowing water into heavy-duty bearings. Complete shaft & bearing housing replacement.</p>
-              </div>
-              <div id="sq-washer-fault-3" class="fault-info-panel">
+              <div id="sq-top-fault-2" class="fault-info-panel">
                 <i class="fas fa-info-circle text-blue"></i>
                 <p><strong>Unbalanced Vibrations (uB):</strong> Worn tub centering springs or inner tub balance ring fluid loss. Restored with factory suspension kits.</p>
+              </div>
+              <div id="sq-top-fault-3" class="fault-info-panel">
+                <i class="fas fa-info-circle text-blue"></i>
+                <p><strong>Lid Lock Fault (dO):</strong> Electronic lid switch failure or mechanical latch misalignment. Replaced with original Speed Queen safety interlocks.</p>
               </div>
             </div>
           </div>
 
-          <a href="#booking" class="pill-btn primary btn-sm">Book Speed Queen Washer Repair</a>
+          <a href="#booking" class="pill-btn primary btn-sm">Book Speed Queen Top-Loader Repair</a>
         </div>
       </div>
 
-      <!-- VERTICAL 2: TUMBLE DRYERS (Text Left, Image Right) -->
+      <!-- VERTICAL 2: FRONT-LOAD WASHERS (Text Left, Image Right) -->
       <div class="vertical-row image-right">
         <div class="vertical-content-col">
-          <span class="vertical-tag">Tumble Dryers</span>
-          <h3>Speed Queen Tumble Dryer Repairs</h3>
+          <span class="vertical-tag">Front-Load Laundry</span>
+          <h3>Speed Queen Front-Load Washer Repairs</h3>
           <p class="vertical-desc">
-            Certified maintenance for Speed Queen ADE electric and ADG gas commercial-spec tumble dryers. We resolve heating cuts, thermal cut-off trips, drum roller wear, and airflow sensor errors across Gauteng.
+            On-site technical support for Speed Queen FF7 commercial-grade front-load washers. We resolve drum bearing noise, Dynamic Balance suspension faults, inverter motor boards, and door boot seal leaks.
+          </p>
+          
+          <!-- Interactive Fault Selector -->
+          <div class="interactive-fault-selector">
+            <span class="selector-label">Select issue for instant estimate:</span>
+            <div class="fault-btn-group">
+              <button class="fault-btn active" data-target="sq-front-fault-1">Loud Bearing Grinding</button>
+              <button class="fault-btn" data-target="sq-front-fault-2">Drain Pump Failure (Er, nL)</button>
+              <button class="fault-btn" data-target="sq-front-fault-3">Door Seal Leaks</button>
+            </div>
+            
+            <div class="fault-details-box">
+              <div id="sq-front-fault-1" class="fault-info-panel active">
+                <i class="fas fa-info-circle text-blue"></i>
+                <p><strong>Loud Bearing Grinding:</strong> Failed rear tub seal allowing water into heavy-duty bearings. Complete shaft & bearing housing replacement.</p>
+              </div>
+              <div id="sq-front-fault-2" class="fault-info-panel">
+                <i class="fas fa-info-circle text-blue"></i>
+                <p><strong>Drain Pump Failure (Er, nL):</strong> Coin trap obstruction or worn commercial drain pump motor. Cleared or replaced on location.</p>
+              </div>
+              <div id="sq-front-fault-3" class="fault-info-panel">
+                <i class="fas fa-info-circle text-blue"></i>
+                <p><strong>Door Seal Leaks:</strong> Torn or mold-damaged heavy-duty door gasket. Swapped with 100% genuine Speed Queen rubber bellows.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#booking" class="pill-btn primary btn-sm">Book Speed Queen Front-Loader Repair</a>
+        </div>
+
+        <div class="vertical-image-col">
+          <div class="image-frame">
+            <img 
+              src="images/speed-queen-front-load-washer.jpg" 
+              alt="Speed Queen Front Load Washer Repair Gauteng" 
+              class="appliance-img"
+            />
+            <span class="image-badge"><i class="fas fa-sync-alt"></i> FF7 Dynamic Balance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VERTICAL 3: TUMBLE DRYERS (Image Left, Text Right) -->
+      <div class="vertical-row image-left">
+        <div class="vertical-image-col">
+          <div class="image-frame">
+            <img 
+              src="images/speed-queen-electric-&-gas-dryer.jpg" 
+              alt="Speed Queen Tumble Dryer Repair Gauteng" 
+              class="appliance-img"
+            />
+            <span class="image-badge"><i class="fas fa-wind"></i> ADE & ADG Commercial Dryers</span>
+          </div>
+        </div>
+        <div class="vertical-content-col">
+          <span class="vertical-tag">Commercial Drying</span>
+          <h3>Speed Queen Electric & Gas Dryer Repairs</h3>
+          <p class="vertical-desc">
+            Certified maintenance for Speed Queen ADE electric and ADG gas commercial-spec dryers. We resolve heating cuts, thermal cut-off trips, motor pulley wear, and airflow sensor errors across Gauteng.
           </p>
           
           <!-- Interactive Fault Selector -->
@@ -490,112 +553,53 @@
 
           <a href="#booking" class="pill-btn primary btn-sm">Book Speed Queen Dryer Repair</a>
         </div>
-
-        <div class="vertical-image-col">
-          <div class="image-frame">
-            <img 
-              src="images/speed-queen-tumble-dryer.jpg" 
-              alt="Speed Queen Tumble Dryer Repair Gauteng" 
-              class="appliance-img"
-            />
-            <span class="image-badge"><i class="fas fa-wind"></i> ADE & ADG Electric / Gas Dryers</span>
-          </div>
-        </div>
       </div>
 
-      <!-- VERTICAL 3: DISHWASHERS (Image Left, Text Right) -->
-      <div class="vertical-row image-left">
-        <div class="vertical-image-col">
-          <div class="image-frame">
-            <img 
-              src="images/speed-queen-dishwasher.jpg" 
-              alt="Speed Queen Dishwasher Repair Gauteng" 
-              class="appliance-img"
-            />
-            <span class="image-badge"><i class="fas fa-utensils"></i> Commercial & Heavy-Duty Dishwashers</span>
-          </div>
-        </div>
-        <div class="vertical-content-col">
-          <span class="vertical-tag">Dishwashers</span>
-          <h3>Speed Queen & Commercial Dishwasher Repairs</h3>
-          <p class="vertical-desc">
-            On-site diagnostics and component replacements for high-durability dishwashers. We service wash pump impellers, high-temperature heating elements, water fill solenoids, and electronic timer PCB controls.
-          </p>
-          
-          <!-- Interactive Fault Selector -->
-          <div class="interactive-fault-selector">
-            <span class="selector-label">Select issue for instant estimate:</span>
-            <div class="fault-btn-group">
-              <button class="fault-btn active" data-target="sq-dw-fault-1">Water Not Heating</button>
-              <button class="fault-btn" data-target="sq-dw-fault-2">Drain Pump Obstruction</button>
-              <button class="fault-btn" data-target="sq-dw-fault-3">Spray Arm Pressure Loss</button>
-            </div>
-            
-            <div class="fault-details-box">
-              <div id="sq-dw-fault-1" class="fault-info-panel active">
-                <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Water Not Heating:</strong> Blown commercial flow-through heating element or faulty NTC sensor. Replaced on-site.</p>
-              </div>
-              <div id="sq-dw-fault-2" class="fault-info-panel">
-                <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Drain Pump Obstruction:</strong> Food trap blockage or worn drain motor. Cleared or fitted with heavy-duty replacement pump.</p>
-              </div>
-              <div id="sq-dw-fault-3" class="fault-info-panel">
-                <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Spray Arm Pressure Loss:</strong> Clogged spray nozzles or worn wash pump impeller. Cleared or replaced on location.</p>
-              </div>
-            </div>
-          </div>
-
-          <a href="#booking" class="pill-btn primary btn-sm">Book Dishwasher Repair</a>
-        </div>
-      </div>
-
-      <!-- VERTICAL 4: REFRIGERATORS (Text Left, Image Right) -->
+      <!-- VERTICAL 4: STACKED UNITS (Text Left, Image Right) -->
       <div class="vertical-row image-right">
         <div class="vertical-content-col">
-          <span class="vertical-tag">Refrigeration</span>
-          <h3>Speed Queen & Heavy-Duty Refrigerator Repairs</h3>
+          <span class="vertical-tag">Stacked Systems</span>
+          <h3>Speed Queen Stacked Washer-Dryer Repairs</h3>
           <p class="vertical-desc">
-            Precision technical support for heavy-duty refrigeration systems and chillers. We repair inverter compressors, defrost heating circuits, PTC starter relays, and electronic temperature sensors.
+            Specialized technician support for Speed Queen space-saving stacked commercial washer-dryer combination units. We repair dual-control microprocessor boards, independent motors, and high-capacity exhaust blowers.
           </p>
           
           <!-- Interactive Fault Selector -->
           <div class="interactive-fault-selector">
             <span class="selector-label">Select issue for instant estimate:</span>
             <div class="fault-btn-group">
-              <button class="fault-btn active" data-target="sq-fridge-fault-1">Compressor Clicking / Warm</button>
-              <button class="fault-btn" data-target="sq-fridge-fault-2">Excessive Evaporator Frost</button>
-              <button class="fault-btn" data-target="sq-fridge-fault-3">Temperature Sensor Failure</button>
+              <button class="fault-btn active" data-target="sq-stacked-fault-1">Upper Dryer Dead</button>
+              <button class="fault-btn" data-target="sq-stacked-fault-2">Lower Washer Lockout</button>
+              <button class="fault-btn" data-target="sq-stacked-fault-3">Control Panel Unresponsive</button>
             </div>
             
             <div class="fault-details-box">
-              <div id="sq-fridge-fault-1" class="fault-info-panel active">
+              <div id="sq-stacked-fault-1" class="fault-info-panel active">
                 <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Compressor Clicking / Warm:</strong> Failed PTC starter relay or voltage surge trip. Swapped with surge-resistant relay units.</p>
+                <p><strong>Upper Dryer Dead:</strong> Thermal fuse trip or independent dryer drive motor failure. Tested and replaced on-site.</p>
               </div>
-              <div id="sq-fridge-fault-2" class="fault-info-panel">
+              <div id="sq-stacked-fault-2" class="fault-info-panel">
                 <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Excessive Evaporator Frost:</strong> Burned automatic defrost heater or faulty defrost timer. Tested and replaced in 45 minutes.</p>
+                <p><strong>Lower Washer Lockout:</strong> Pressure switch or door interlock board communication failure. Recalibrated with factory software.</p>
               </div>
-              <div id="sq-fridge-fault-3" class="fault-info-panel">
+              <div id="sq-stacked-fault-3" class="fault-info-panel">
                 <i class="fas fa-info-circle text-blue"></i>
-                <p><strong>Temperature Sensor Failure:</strong> Out-of-spec thermistor causing over-freezing or warm cabinet. Recalibrated or replaced.</p>
+                <p><strong>Control Panel Unresponsive:</strong> Dual-microprocessor control PCB power surge damage. Microprocessor replacement & surge protection setup.</p>
               </div>
             </div>
           </div>
 
-          <a href="#booking" class="pill-btn primary btn-sm">Book Refrigerator Repair</a>
+          <a href="#booking" class="pill-btn primary btn-sm">Book Stacked Unit Fix</a>
         </div>
 
         <div class="vertical-image-col">
           <div class="image-frame">
             <img 
-              src="images/speed-queen-fridge.jpg" 
-              alt="Speed Queen Refrigerator Repair Gauteng" 
+              src="images/speed-queen-stacked-washer-dryer.jpg" 
+              alt="Speed Queen Stacked Washer Dryer Repair Gauteng" 
               class="appliance-img"
             />
-            <span class="image-badge"><i class="fas fa-snowflake"></i> Heavy-Duty & Commercial Refrigeration</span>
+            <span class="image-badge"><i class="fas fa-layer-group"></i> Commercial Stacked Systems</span>
           </div>
         </div>
       </div>
