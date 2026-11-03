@@ -653,3 +653,1201 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/* ==========================================================================
+   BRANDS QUICK ASSESSOR SCRIPT (7 BRANDS)
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".brands-intro-section .selector-btn");
+  const outputTitle = document.getElementById("brandOutputTitle");
+  const outputDesc = document.getElementById("brandOutputDesc");
+
+  const brandData = {
+    "defy": {
+      title: "Defy Factory OEM Support",
+      desc: "Full inventory of genuine Defy compressors, heating elements, electronic control boards, and drain pumps carried directly in our Gauteng mobile vans."
+    },
+    "samsung": {
+      title: "Samsung Smart & Inverter Units",
+      desc: "Specialized equipment for Digital Inverter compressors, Twin Cooling Plus sensor calibration, and EcoBubble drum motor repairs."
+    },
+    "lg": {
+      title: "LG Direct Drive & Linear Systems",
+      desc: "On-site diagnostic testing for Direct Drive washer motors, Inverter Linear fridge compressors, and main electronic PCB replacements."
+    },
+    "whirlpool": {
+      title: "Whirlpool 6th Sense Appliances",
+      desc: "Expert servicing for 6th Sense thermal sensor arrays, heavy-duty drive belts, intake valves, and electronic control modules."
+    },
+    "bosch": {
+      title: "Bosch EcoSilence & German Engineering",
+      desc: "Precision repair tools for EcoSilence Drive motors, inline flow heaters, door lock interlocks, and Series 4/6/8 main boards."
+    },
+    "speedqueen": {
+      title: "Speed Queen Commercial & Domestic Laundry",
+      desc: "Heavy-duty replacement belts, industrial drum bearings, mechanical timer switches, and high-performance motor assemblies."
+    },
+    "smeg": {
+      title: "Smeg Designer & Premium Appliances",
+      desc: "Factory-certified repair techniques for Smeg retro fridges, integrated dishwashers, oven elements, and electronic thermostats."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const brandKey = btn.getAttribute("data-brand");
+      if (brandData[brandKey]) {
+        outputTitle.innerText = brandData[brandKey].title;
+        outputDesc.innerText = brandData[brandKey].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   GAUTENG COVERAGE & BRAND AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkCoverageBtn");
+  const suburbSelect = document.getElementById("checkerSuburb");
+  const brandSelect = document.getElementById("checkerBrand");
+  const resultBox = document.getElementById("checkerResult");
+  const statusText = document.getElementById("resultStatusText");
+  const detailsText = document.getElementById("resultDetailsText");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const brand = brandSelect.value;
+
+    if (!suburb || !brand) {
+      alert("Please select both your suburb and appliance brand to check availability.");
+      return;
+    }
+
+    const suburbNames = {
+      "sandton": "Sandton / Bryanston",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const brandNames = {
+      "defy": "Defy",
+      "samsung": "Samsung",
+      "lg": "LG",
+      "whirlpool": "Whirlpool",
+      "bosch": "Bosch",
+      "speedqueen": "Speed Queen",
+      "smeg": "Smeg"
+    };
+
+    // Update Result Box Text dynamically
+    statusText.innerText = `Mobile Van Ready in ${suburbNames[suburb]}`;
+    detailsText.innerHTML = `We have active units carrying genuine <strong>${brandNames[brand]}</strong> spare parts in your area today. Book now for priority same-day dispatch.`;
+
+    // Show result box with smooth transition
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const brandSelect = document.getElementById("errorBrandSelect");
+  const codeInput = document.getElementById("errorCodeInput");
+  const tableRows = document.querySelectorAll("#errorCodesTable tbody tr");
+  const noErrorFound = document.getElementById("noErrorFound");
+
+  if (!brandSelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedBrand = brandSelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowBrand = row.getAttribute("data-brand");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesBrand = (selectedBrand === "all") || (rowBrand === selectedBrand);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesBrand && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    // Toggle No Results Notice
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  brandSelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   SAMSUNG MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".samsung-intro-section .selector-btn");
+  const outputTitle = document.getElementById("samsungOutputTitle");
+  const outputDesc = document.getElementById("samsungOutputDesc");
+
+  const samsungData = {
+    "fridge": {
+      title: "Digital Inverter & Twin Cooling Fridges",
+      desc: "We carry genuine Samsung R600a inverter compressors, main PCB control boards, defrost sensors, and evaporator fan motors directly in our Gauteng mobile vans."
+    },
+    "washer": {
+      title: "EcoBubble & AddWash Washing Machines",
+      desc: "Specialized tools and OEM spare parts for Samsung drain pumps, EcoBubble generator units, door lock interlocks, and drum drive belt replacements."
+    },
+    "dryer": {
+      title: "Heat Pump & Sensor Dry Tumble Dryers",
+      desc: "On-site testing and replacements for Samsung dryer heating elements, thermal fuses, drive belts, and moisture sensor arrays."
+    },
+    "dishwasher": {
+      title: "WaterWall & StormWash Dishwashers",
+      desc: "Stocked with original Samsung water inlet valves, circulation pump assemblies, spray arm sensors, and leak protection switches."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-samsung");
+      if (samsungData[key]) {
+        outputTitle.innerText = samsungData[key].title;
+        outputDesc.innerText = samsungData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   SAMSUNG VERTICAL FAULT SELECTOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const faultSelectors = document.querySelectorAll(".interactive-fault-selector");
+
+  faultSelectors.forEach(selector => {
+    const buttons = selector.querySelectorAll(".fault-btn");
+    const panels = selector.querySelectorAll(".fault-info-panel");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Toggle button active status
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle information panel
+        panels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+});
+/* ==========================================================================
+   SAMSUNG ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("samsungApplianceCategory");
+  const codeInput = document.getElementById("samsungErrorCodeInput");
+  const tableRows = document.querySelectorAll("#samsungErrorTable tbody tr");
+  const noErrorFound = document.getElementById("samsungNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   SAMSUNG SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkSamsungVanBtn");
+  const suburbSelect = document.getElementById("samsungSuburbSelect");
+  const typeSelect = document.getElementById("samsungApplianceType");
+  const resultBox = document.getElementById("samsungVanResult");
+  const statusText = document.getElementById("samsungResultStatus");
+  const detailsText = document.getElementById("samsungResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and Samsung appliance type.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Fourways",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "fridge": "Samsung Refrigerator",
+      "washer": "Samsung EcoBubble Washer",
+      "dryer": "Samsung Heat Pump Dryer",
+      "dishwasher": "Samsung Dishwasher"
+    };
+
+    statusText.innerText = `Samsung Mobile Van Ready in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying original spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   LG MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".lg-intro-section .selector-btn");
+  const outputTitle = document.getElementById("lgOutputTitle");
+  const outputDesc = document.getElementById("lgOutputDesc");
+
+  const lgData = {
+    "fridge": {
+      title: "Inverter Linear & InstaView Fridges",
+      desc: "Full inventory of genuine LG Inverter Linear compressors, main PCB boards, defrost sensors, and door-in-door seal assemblies carried directly in our Gauteng mobile vans."
+    },
+    "washer": {
+      title: "Direct Drive & TurboWash Washing Machines",
+      desc: "On-site testing for LG Direct Drive hall sensors, drain pump motors, rubber tub boot seals, and electronic control board replacements."
+    },
+    "dryer": {
+      title: "Dual Inverter Heat Pump Tumble Dryers",
+      desc: "Specialized diagnostics for LG heat pump compressors, thermal cut-offs, drive belts, and sensor dry moisture sensors."
+    },
+    "dishwasher": {
+      title: "QuadWash & TrueSteam Dishwashers",
+      desc: "Stocked with factory LG circulation pumps, water inlet valves, microswitch leak sensors, and QuadWash spray arm assemblies."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-lg");
+      if (lgData[key]) {
+        outputTitle.innerText = lgData[key].title;
+        outputDesc.innerText = lgData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   LG VERTICAL FAULT SELECTOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const faultSelectors = document.querySelectorAll(".interactive-fault-selector");
+
+  faultSelectors.forEach(selector => {
+    const buttons = selector.querySelectorAll(".fault-btn");
+    const panels = selector.querySelectorAll(".fault-info-panel");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Toggle button active status
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle information panel
+        panels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+});
+/* ==========================================================================
+   LG ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("lgApplianceCategory");
+  const codeInput = document.getElementById("lgErrorCodeInput");
+  const tableRows = document.querySelectorAll("#lgErrorTable tbody tr");
+  const noErrorFound = document.getElementById("lgNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   LG SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkLgVanBtn");
+  const suburbSelect = document.getElementById("lgSuburbSelect");
+  const typeSelect = document.getElementById("lgApplianceTypeSelect");
+  const resultBox = document.getElementById("lgVanResult");
+  const statusText = document.getElementById("lgResultStatus");
+  const detailsText = document.getElementById("lgResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and LG appliance type.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Fourways",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "fridge": "LG Inverter Linear Refrigerator",
+      "washer": "LG Direct Drive Washer",
+      "dryer": "LG Dual Inverter Dryer",
+      "dishwasher": "LG QuadWash Dishwasher"
+    };
+
+    statusText.innerText = `LG Mobile Van Ready in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying original spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   WHIRLPOOL MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".whirlpool-intro-section .selector-btn");
+  const outputTitle = document.getElementById("whirlpoolOutputTitle");
+  const outputDesc = document.getElementById("whirlpoolOutputDesc");
+
+  const whirlpoolData = {
+    "fridge": {
+      title: "6th Sense FreshControl Refrigerators",
+      desc: "Full inventory of genuine Whirlpool 6th Sense temperature thermistors, defrost heaters, start relays, and main control boards carried directly in our Gauteng mobile vans."
+    },
+    "washer": {
+      title: "FreshCare+ & Zen Direct Drive Washers",
+      desc: "On-site diagnostic testing for Whirlpool tachometer sensors, drain pump motors, door interlock switches, and electronic control board replacements."
+    },
+    "dryer": {
+      title: "6th Sense Heat Pump & Condenser Dryers",
+      desc: "Specialized servicing for Whirlpool heat pump compressors, thermal fuses, drive belts, and moisture sensor arrays."
+    },
+    "dishwasher": {
+      title: "PowerClean Pro & 6th Sense Dishwashers",
+      desc: "Stocked with factory Whirlpool circulation pumps, water inlet valves, microswitch leak sensors, and PowerClean spray arm assemblies."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-whirlpool");
+      if (whirlpoolData[key]) {
+        outputTitle.innerText = whirlpoolData[key].title;
+        outputDesc.innerText = whirlpoolData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   WHIRLPOOL VERTICAL FAULT SELECTOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const faultSelectors = document.querySelectorAll(".interactive-fault-selector");
+
+  faultSelectors.forEach(selector => {
+    const buttons = selector.querySelectorAll(".fault-btn");
+    const panels = selector.querySelectorAll(".fault-info-panel");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Toggle button active status
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle information panel
+        panels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+});
+/* ==========================================================================
+   WHIRLPOOL ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("whirlpoolApplianceCategory");
+  const codeInput = document.getElementById("whirlpoolErrorCodeInput");
+  const tableRows = document.querySelectorAll("#whirlpoolErrorTable tbody tr");
+  const noErrorFound = document.getElementById("whirlpoolNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   WHIRLPOOL SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkWhirlpoolVanBtn");
+  const suburbSelect = document.getElementById("whirlpoolSuburbSelect");
+  const typeSelect = document.getElementById("whirlpoolApplianceTypeSelect");
+  const resultBox = document.getElementById("whirlpoolVanResult");
+  const statusText = document.getElementById("whirlpoolResultStatus");
+  const detailsText = document.getElementById("whirlpoolResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and Whirlpool appliance type.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Fourways",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "fridge": "Whirlpool 6th Sense Refrigerator",
+      "washer": "Whirlpool FreshCare+ Washer",
+      "dryer": "Whirlpool 6th Sense Heat Pump Dryer",
+      "dishwasher": "Whirlpool PowerClean Dishwasher"
+    };
+
+    statusText.innerText = `Whirlpool Mobile Van Ready in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying original spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   BOSCH MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".bosch-intro-section .selector-btn");
+  const outputTitle = document.getElementById("boschOutputTitle");
+  const outputDesc = document.getElementById("boschOutputDesc");
+
+  const boschData = {
+    "fridge": {
+      title: "VitaFresh & NoFrost Fridges (Series 4/6/8)",
+      desc: "Full inventory of original Bosch NTC temperature sensors, defrost heating elements, inverter compressor relays, and electronic control modules carried directly in our mobile units."
+    },
+    "washer": {
+      title: "EcoSilence Drive & i-DOS Washers",
+      desc: "On-site testing for Bosch EcoSilence brushless motor inverter boards, drain pump motors, door interlock latches, and AquaStop solenoids."
+    },
+    "dryer": {
+      title: "SelfCleaning Condenser Heat Pump Dryers",
+      desc: "Specialized diagnostics for Bosch heat pump compressors, drive belts, moisture sensors, and thermal cut-off fuses."
+    },
+    "dishwasher": {
+      title: "PerfectDry Zeolith & AquaStop Dishwashers",
+      desc: "Stocked with original Bosch heat pump circulation assemblies, flow meters, AquaStop base float switches, and spray arm mechanisms."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-bosch");
+      if (boschData[key]) {
+        outputTitle.innerText = boschData[key].title;
+        outputDesc.innerText = boschData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   BOSCH VERTICAL FAULT SELECTOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const faultSelectors = document.querySelectorAll(".interactive-fault-selector");
+
+  faultSelectors.forEach(selector => {
+    const buttons = selector.querySelectorAll(".fault-btn");
+    const panels = selector.querySelectorAll(".fault-info-panel");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Toggle button active status
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle information panel
+        panels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+});
+/* ==========================================================================
+   BOSCH ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("boschApplianceCategory");
+  const codeInput = document.getElementById("boschErrorCodeInput");
+  const tableRows = document.querySelectorAll("#boschErrorTable tbody tr");
+  const noErrorFound = document.getElementById("boschNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   BOSCH SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkBoschVanBtn");
+  const suburbSelect = document.getElementById("boschSuburbSelect");
+  const typeSelect = document.getElementById("boschApplianceTypeSelect");
+  const resultBox = document.getElementById("boschVanResult");
+  const statusText = document.getElementById("boschResultStatus");
+  const detailsText = document.getElementById("boschResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and Bosch appliance type.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Fourways",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "fridge": "Bosch VitaFresh Refrigerator",
+      "washer": "Bosch EcoSilence Washing Machine",
+      "dryer": "Bosch Heat Pump Tumble Dryer",
+      "dishwasher": "Bosch PerfectDry Dishwasher"
+    };
+
+    statusText.innerText = `Bosch Mobile Van Ready in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying original spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   SPEED QUEEN MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".speedqueen-intro-section .selector-btn");
+  const outputTitle = document.getElementById("sqOutputTitle");
+  const outputDesc = document.getElementById("sqOutputDesc");
+
+  const sqData = {
+    "toploader": {
+      title: "Classic Clean & Perfect Wash Top Loaders (TC5/TR5/TR7)",
+      desc: "Stocked inventory of original Speed Queen steel-gear transmission assemblies, drive belts, water inlet valves, drain pumps, and lid lock switches carried directly in our mobile units."
+    },
+    "frontloader": {
+      title: "Dynamic Balance Commercial Front Loaders (FF7)",
+      desc: "On-site diagnostic testing for Speed Queen heavy-duty tub bearings, outer tub spring suspension, inverter motor control boards, and door boot seals."
+    },
+    "dryer": {
+      title: "Commercial-Grade Electric & Gas Dryers (ADE/ADG)",
+      desc: "Specialized servicing for Speed Queen commercial heating elements, thermal cut-off fuses, heavy-duty drive belts, blower wheels, and moisture sensors."
+    },
+    "stacked": {
+      title: "Stacked Commercial Washer-Dryer Combination Units",
+      desc: "Comprehensive multi-motor diagnostics for stacked dual-control microprocessor boards, independent drive motors, and dual exhaust blower assemblies."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-sq");
+      if (sqData[key]) {
+        outputTitle.innerText = sqData[key].title;
+        outputDesc.innerText = sqData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   SPEED QUEEN ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("sqApplianceCategory");
+  const codeInput = document.getElementById("sqErrorCodeInput");
+  const tableRows = document.querySelectorAll("#sqErrorTable tbody tr");
+  const noErrorFound = document.getElementById("sqNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   SPEED QUEEN SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkSqVanBtn");
+  const suburbSelect = document.getElementById("sqSuburbSelect");
+  const typeSelect = document.getElementById("sqApplianceTypeSelect");
+  const resultBox = document.getElementById("sqVanResult");
+  const statusText = document.getElementById("sqResultStatus");
+  const detailsText = document.getElementById("sqResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and Speed Queen equipment type.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Fourways",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "toploader": "Speed Queen Top-Load Washer",
+      "frontloader": "Speed Queen Front-Load Washer",
+      "dryer": "Speed Queen Tumble Dryer",
+      "stacked": "Speed Queen Stacked Unit"
+    };
+
+    statusText.innerText = `Speed Queen Mobile Van Ready in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying genuine OEM spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   DEFY MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".defy-intro-section .selector-btn");
+  const outputTitle = document.getElementById("defyOutputTitle");
+  const outputDesc = document.getElementById("defyOutputDesc");
+
+  const defyData = {
+    "fridge": {
+      title: "Dual Cooling Refrigerators & Chest Freezers",
+      desc: "Fully stocked mobile inventory for Defy Dual Cooling, NatureLight fridges, and chest freezers. Carrying original thermostats, defrost heaters, overload protectors, door seals, and ProSmart inverter modules."
+    },
+    "washer": {
+      title: "Automaid Front & Top Loader Washing Machines",
+      desc: "Specialized servicing for Defy Automaid and AquaWave washing machines. On-site repairs for drain pumps, door interlocks, motor brushes, pressure switches, and main PCB control boards."
+    },
+    "cooking": {
+      title: "Thermofan+ Ovens, Freestanding Stoves & Hobs",
+      desc: "Complete repair solutions for Defy Thermofan+ eye-level ovens, solid plate stoves, and glass touch hobs. Carrying genuine bake elements, selector switches, thermal fuses, and NTC sensors."
+    },
+    "dryer": {
+      title: "EcoDry Auto-Dry & Heat Pump Tumble Dryers",
+      desc: "Rapid testing and component replacement for Defy EcoDry sensor dryers. Stocked with thermal cutouts, drive belts, drum rollers, heating elements, and moisture sensors."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-defy");
+      if (defyData[key]) {
+        outputTitle.innerText = defyData[key].title;
+        outputDesc.innerText = defyData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   DEFY VERTICAL FAULT SELECTOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const faultSelectors = document.querySelectorAll(".interactive-fault-selector");
+
+  faultSelectors.forEach(selector => {
+    const buttons = selector.querySelectorAll(".fault-btn");
+    const panels = selector.querySelectorAll(".fault-info-panel");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Toggle button active status
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle information panel
+        panels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+});
+/* ==========================================================================
+   DEFY ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("defyApplianceCategory");
+  const codeInput = document.getElementById("defyErrorCodeInput");
+  const tableRows = document.querySelectorAll("#defyErrorTable tbody tr");
+  const noErrorFound = document.getElementById("defyNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   DEFY SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkDefyVanBtn");
+  const suburbSelect = document.getElementById("defySuburbSelect");
+  const typeSelect = document.getElementById("defyApplianceTypeSelect");
+  const resultBox = document.getElementById("defyVanResult");
+  const statusText = document.getElementById("defyResultStatus");
+  const detailsText = document.getElementById("defyResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and Defy appliance category.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Fourways",
+      "randburg": "Randburg / Northcliff",
+      "midrand": "Midrand / Kyalami",
+      "rosebank": "Rosebank / Parkhurst",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "fridge": "Defy Refrigerator / Freezer",
+      "washer": "Defy Automaid Washing Machine",
+      "oven": "Defy Thermofan+ Oven / Stove",
+      "dryer": "Defy EcoDry Tumble Dryer"
+    };
+
+    statusText.innerText = `Defy Mobile Van Active in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying genuine OEM spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
+/* ==========================================================================
+   SMEG MODEL ASSESSOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorBtns = document.querySelectorAll(".smeg-intro-section .selector-btn");
+  const outputTitle = document.getElementById("smegOutputTitle");
+  const outputDesc = document.getElementById("smegOutputDesc");
+
+  const smegData = {
+    "fridge": {
+      title: "FAB 50s Retro & Built-In Refrigeration",
+      desc: "Dedicated mobile support for Smeg FAB28, FAB30, FAB50 retro series, and integrated French door refrigerators. Stocked with original inverter compressor modules, NTC sensors, defrost heaters, and magnetic door seals."
+    },
+    "dishwasher": {
+      title: "Integrated & Freestanding Planetary Dishwashers",
+      desc: "Specialized servicing for Smeg double-orbital and Planetary Wash dishwashers. On-site resolution for Aquastop flood sensor trips, spray arm blockage, wash pump impellers, and electronic PCB boards."
+    },
+    "washer": {
+      title: "Front-Load & Washer-Dryer Combo Units",
+      desc: "Precision technician repairs for Smeg front-loading washing machines. Carrying factory-original drain pumps, door lock solenoids, tub shock absorbers, motor carbon brushes, and control modules."
+    },
+    "dryer": {
+      title: "Condenser & Heat Pump Tumble Dryers",
+      desc: "Rapid testing and component replacement for Smeg Eco-Heat and sensor dryers. Stocked with thermal cutouts, poly-V drive belts, drum rollers, moisture sensors, and heating elements."
+    }
+  };
+
+  selectorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectorBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const key = btn.getAttribute("data-smeg");
+      if (smegData[key]) {
+        outputTitle.innerText = smegData[key].title;
+        outputDesc.innerText = smegData[key].desc;
+      }
+    });
+  });
+});
+/* ==========================================================================
+   SMEG VERTICAL FAULT SELECTOR SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const faultSelectors = document.querySelectorAll(".interactive-fault-selector");
+
+  faultSelectors.forEach(selector => {
+    const buttons = selector.querySelectorAll(".fault-btn");
+    const panels = selector.querySelectorAll(".fault-info-panel");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Toggle button active status
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle information panel
+        panels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+});
+/* ==========================================================================
+   SMEG ERROR CODE LOOKUP FILTER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categorySelect = document.getElementById("smegApplianceCategory");
+  const codeInput = document.getElementById("smegErrorCodeInput");
+  const tableRows = document.querySelectorAll("#smegErrorTable tbody tr");
+  const noErrorFound = document.getElementById("smegNoErrorFound");
+
+  if (!categorySelect || !codeInput) return;
+
+  function filterErrorCodes() {
+    const selectedCategory = categorySelect.value;
+    const query = codeInput.value.toLowerCase().trim();
+    let visibleRows = 0;
+
+    tableRows.forEach(row => {
+      const rowCategory = row.getAttribute("data-category");
+      const rowCodes = row.getAttribute("data-code").toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCategory = (selectedCategory === "all") || (rowCategory === selectedCategory);
+      const matchesSearch = (query === "") || rowCodes.includes(query) || rowText.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = "";
+        visibleRows++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (visibleRows === 0) {
+      noErrorFound.style.display = "flex";
+    } else {
+      noErrorFound.style.display = "none";
+    }
+  }
+
+  categorySelect.addEventListener("change", filterErrorCodes);
+  codeInput.addEventListener("input", filterErrorCodes);
+});
+/* ==========================================================================
+   SMEG SUBURB & VAN AVAILABILITY CHECKER SCRIPT
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.getElementById("checkSmegVanBtn");
+  const suburbSelect = document.getElementById("smegSuburbSelect");
+  const typeSelect = document.getElementById("smegApplianceTypeSelect");
+  const resultBox = document.getElementById("smegVanResult");
+  const statusText = document.getElementById("smegResultStatus");
+  const detailsText = document.getElementById("smegResultDetails");
+
+  if (!checkBtn) return;
+
+  checkBtn.addEventListener("click", () => {
+    const suburb = suburbSelect.value;
+    const type = typeSelect.value;
+
+    if (!suburb || !type) {
+      alert("Please select both your suburb and Smeg appliance category.");
+      return;
+    }
+
+    const suburbLabels = {
+      "sandton": "Sandton / Hyde Park",
+      "rosebank": "Rosebank / Parkhurst",
+      "midrand": "Midrand / Kyalami",
+      "randburg": "Randburg / Northcliff",
+      "other": "Johannesburg"
+    };
+
+    const typeLabels = {
+      "fridge": "Smeg Refrigerator / Freezer",
+      "dishwasher": "Smeg Planetary Wash Dishwasher",
+      "washer": "Smeg Front-Load Washing Machine",
+      "dryer": "Smeg Heat Pump Tumble Dryer"
+    };
+
+    statusText.innerText = `Smeg Mobile Van Active in ${suburbLabels[suburb]}`;
+    detailsText.innerHTML = `Mobile unit carrying genuine imported OEM spare parts for your <strong>${typeLabels[type]}</strong> is active in your area today. Book now for priority same-day dispatch.`;
+
+    resultBox.style.display = "block";
+  });
+});
