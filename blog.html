@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appliance Repair Advice & Guides | Eazy Appliance Repairs</title>
+    <meta name="description" content="Practical appliance repair advice from Gauteng technicians: fridge not cooling, fridge leaking water, washing machine not spinning or draining and tumble dryer not heating." />
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom External Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Supplementary styles for articles, legal pages & blog cards -->
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body>
+    <main>
+        <!-- 1. TOP UTILITY BAR -->
+<div class="top-bar">
+  <div class="container top-bar-container">
+    <div class="top-left">
+      <span class="badge-status">
+        <span class="pulse-dot"></span> 24/7 Emergency Repairs </span>
+      <span class="divider">|</span>
+      <span class="location-tag">
+        <i class="fas fa-map-marker-alt"></i> Johannesburg & Surrounds
+        (Randburg, Sandton, Midrand, Rosebank)
+      </span>
+    </div>
+    <div class="top-right">
+      <a href="tel:+27110000000" class="top-link phone-link">
+        <i class="fas fa-phone-alt"></i> +27 11 000 0000
+      </a>
+      <a
+        href="https://wa.me/27110000000"
+        target="_blank"
+        class="top-link whatsapp-link"
+      >
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a
+        href="mailto:info@eazyappliancerepairs.co.za"
+        class="top-link mail-link"
+      >
+        <i class="far fa-envelope"></i> info@eazyappliancerepairs.co.za
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 2. MAIN NAVBAR & HEADER -->
+<header class="site-header">
+  <div class="container header-container">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo">
+      <div class="logo-icon">
+        <i class="fas fas fa-newspaper"></i>
+      </div>
+      <div class="logo-text">
+        <span class="logo-title">EAZY<span class="accent-dot">.</span></span>
+        <span class="logo-subtitle">Appliance Repairs</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-nav">
+      <a href="index.html" class="nav-item">Home</a>
+
+      <!-- Services Dropdown (Active Category) -->
+      <div class="nav-item dropdown">
+        <a href="services.html" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Services <i class="fas fa-chevron-down text-arrow" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="services.html" class="dropdown-header-link">All Services Overview</a>
+          <a href="fridge-repairs.html" class="active-sublink">
+            <i class="fas fa-snowflake text-blue" aria-hidden="true"></i> Fridge & Freezer Repairs
+          </a>
+          <a href="washing-machine-repairs.html">
+            <i class="fas fa-soap text-indigo" aria-hidden="true"></i> Washing Machine Repairs
+          </a>
+          <a href="tumble-dryer-repairs.html">
+            <i class="fas fa-wind text-amber" aria-hidden="true"></i> Tumble Dryer Repairs
+          </a>
+          <a href="dishwasher-repairs.html">
+            <i class="fas fa-utensils text-teal" aria-hidden="true"></i> Dishwasher Repairs
+          </a>
+        </div>
+      </div>
+
+      <!-- Brands Dropdown Nav Item -->
+      <div class="dropdown">
+        <a href="brands.html" class="nav-item">
+          Brands <i class="fas fa-chevron-down text-arrow"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="brands.html" class="dropdown-header-link">All Brands We Service</a>
+          <a href="brands/samsung.html"><span class="brand-badge text-blue">●</span> Samsung Repairs</a>
+          <a href="brands/lg.html"><span class="brand-badge text-red">●</span> LG Repairs</a>
+          <a href="brands/whirlpool.html"><span class="brand-badge text-amber">●</span> Whirlpool Repairs</a>
+          <a href="brands/bosch.html"><span class="brand-badge text-teal">●</span> Bosch Repairs</a>
+          <a href="brands/speed-queen.html"><span class="brand-badge text-indigo">●</span> Speed Queen Repairs</a>
+          <a href="brands/defy.html"><span class="brand-badge text-cyan">●</span> Defy Repairs</a>
+          <a href="brands/smeg.html"><span class="brand-badge text-purple">●</span> Smeg Repairs</a>
+        </div>
+      </div>
+
+      <!-- Service Areas Dropdown -->
+      <div class="nav-item dropdown">
+        <a href="service-areas.html" class="dropdown-trigger">
+          Service Areas <i class="fas fa-chevron-down text-arrow"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="service-areas.html" class="dropdown-header-link">All Service Areas</a>
+          <a href="areas/randburg.html"><i class="fas fa-location-dot"></i> Randburg</a>
+          <a href="areas/midrand.html"><i class="fas fa-location-dot"></i> Midrand</a>
+          <a href="areas/sandton.html"><i class="fas fa-location-dot"></i> Sandton</a>
+          <a href="areas/rosebank.html"><i class="fas fa-location-dot"></i> Rosebank</a>
+        </div>
+      </div>
+
+      <!-- Advice & Resources Dropdown -->
+      <div class="nav-item dropdown active">
+        <a href="blog.html" class="dropdown-trigger">
+          Resources <i class="fas fa-chevron-down text-arrow"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="blog.html" class="dropdown-header-link">Advice & Articles</a>
+          <a href="blog/fridge-not-cooling.html">Fridge Not Cooling Guide</a>
+          <a href="blog/washing-machine-not-draining.html">Washing Machine Not Draining</a>
+          <a href="blog/tumble-dryer-not-heating.html">Tumble Dryer Not Heating</a>
+        </div>
+      </div>
+
+      <!-- Company Dropdown -->
+      <div class="nav-item dropdown">
+        <span class="dropdown-trigger">
+          Company <i class="fas fa-chevron-down text-arrow"></i>
+        </span>
+        <div class="dropdown-menu">
+          <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="warranty.html"><i class="fas fa-shield-alt"></i> Warranty Info</a>
+          <a href="privacy-policy.html"><i class="fas fa-user-lock"></i> Privacy Policy</a>
+          <a href="terms-and-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="nav-item">Contact</a>
+    </nav>
+
+    <!-- Pill Action Button -->
+    <div class="header-action">
+      <a href="#booking" class="pill-btn">Easy Online Booking</a>
+    </div>
+
+    <!-- Hamburger Button for Mobile -->
+    <button
+      class="mobile-toggle"
+      id="menuToggle"
+      aria-label="Toggle Mobile Menu"
+    >
+      <i class="fas fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+
+  <!-- 3. MOBILE MENU DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+
+      <div class="mobile-section-title">Services</div>
+      <a href="services.html" class="mobile-nav-link sub">All Services</a>
+      <a href="fridge-repairs.html" class="mobile-nav-link sub">Fridge & Freezer Repairs</a>
+      <a href="washing-machine-repairs.html" class="mobile-nav-link sub">Washing Machine Repairs</a>
+      <a href="tumble-dryer-repairs.html" class="mobile-nav-link sub">Tumble Dryer Repairs</a>
+      <a href="dishwasher-repairs.html" class="mobile-nav-link sub">Dishwasher Repairs</a>
+
+      <div class="mobile-section-title">Service Areas</div>
+      <a href="service-areas.html" class="mobile-nav-link sub">All Service Areas</a>
+      <a href="areas/randburg.html" class="mobile-nav-link sub">Randburg</a>
+      <a href="areas/midrand.html" class="mobile-nav-link sub">Midrand</a>
+      <a href="areas/sandton.html" class="mobile-nav-link sub">Sandton</a>
+      <a href="areas/rosebank.html" class="mobile-nav-link sub">Rosebank</a>
+
+      <div class="mobile-section-title">Resources & Legal</div>
+      <a href="blog.html" class="mobile-nav-link sub active">Blog</a>
+      <a href="faqs.html" class="mobile-nav-link sub">FAQs</a>
+      <a href="reviews.html" class="mobile-nav-link sub">Reviews</a>
+      <a href="warranty.html" class="mobile-nav-link sub">Warranty Info</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+
+      <div class="mobile-btn-wrapper">
+        <a href="#booking" class="pill-btn full-width">Easy Online Booking</a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- HERO BANNER -->
+<section class="page-hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Resources</span></nav>
+      <span class="hero-badge">
+        <i class="fas fa-newspaper text-blue"></i> ADVICE & REPAIR GUIDES
+      </span>
+      <h1 class="hero-title">Appliance Repair Advice & Troubleshooting Guides</h1>
+      <p class="hero-subtitle">Practical, technician-written guides to help you diagnose common fridge, washing machine and tumble dryer faults, work out what is safe to check yourself and know when to call for help.</p>
+      
+      <div class="hero-cta-group"><a href="#guides" class="pill-btn primary">
+          <i class="fas fa-book-open"></i> Browse Guides
+        </a>
+        <a href="tel:+27110000000" class="btn-secondary">
+          <i class="fas fa-phone-alt"></i> Speak to a Technician
+        </a></div>
+      <div class="hero-features-inline"><span><i class="fas fa-user-check text-blue"></i> Written by Technicians</span><span><i class="fas fa-shield-alt text-blue"></i> Safety-First Advice</span><span><i class="fas fa-coins text-blue"></i> Typical Repair Costs</span></div>
+    </div>
+  </div>
+</section>
+<!-- BLOG LISTING -->
+<section id="guides" class="blog-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="badge-tag"><i class="fas fa-book-open"></i> Resource Library</span>
+      <h2>Repair Guides & Troubleshooting Advice</h2>
+      <p class="section-subtitle">Start with the symptom you are seeing and work through the checks, costs and warning signs for each appliance.</p>
+    </div>
+    <div class="area-filter-tabs blog-filter">
+      <button class="filter-btn active" data-filter="all">All Guides</button>
+      <button class="filter-btn" data-filter="fridge">Fridge &amp; Freezer</button>
+      <button class="filter-btn" data-filter="washer">Washing Machine</button>
+      <button class="filter-btn" data-filter="dryer">Tumble Dryer</button>
+    </div>
+    
+    <article class="blog-featured" data-post-cat="fridge">
+      <div class="blog-thumb"><img src="images/compressor.jpg" alt="Technician carrying out an on-site household appliance repair" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/800x528/1e293b/ffffff?text=Eazy+Appliance+Repairs'" /></div>
+      <div class="blog-body">
+        <span class="blog-cat"><i class="fas fa-star"></i> Featured Guide</span>
+        <h2><a href="blog/fridge-not-cooling.html">Fridge Not Cooling? Causes, Quick Checks & When to Call a Technician</a></h2>
+        <p>A warm fridge puts your food at risk. Learn the common causes, the safe checks to try first and when to call a technician.</p>
+        <div class="blog-meta"><span><i class="far fa-clock"></i>6 min read</span><span><i class="far fa-calendar"></i>Updated October 2026</span></div>
+        <a href="blog/fridge-not-cooling.html" class="inline-link">Read the guide <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <div class="blog-grid">
+      <article class="blog-card" data-post-cat="fridge">
+        <div class="blog-thumb"><img src="images/water-leak.webp" alt="Technician carrying out an on-site household appliance repair" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x396/1e293b/ffffff?text=Eazy+Appliance+Repairs'" /></div>
+        <div class="blog-body">
+          <span class="blog-cat"><i class="fas fa-droplet"></i> Fridge & Freezer</span>
+          <h3><a href="blog/fridge-leaking-water.html">Fridge Leaking Water? Find the Cause and Fix It</a></h3>
+          <p>Puddles under or inside your fridge usually have a simple cause. Find the source and learn how to clear a blocked defrost drain.</p>
+          <div class="blog-meta"><span><i class="far fa-clock"></i>5 min read</span><span><i class="far fa-calendar"></i>Updated October 2026</span></div>
+          <a href="blog/fridge-leaking-water.html" class="inline-link">Read the guide <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card" data-post-cat="washer">
+        <div class="blog-thumb"><img src="images/washing-machine.jpg" alt="Technician carrying out an on-site household appliance repair" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x396/1e293b/ffffff?text=Eazy+Appliance+Repairs'" /></div>
+        <div class="blog-body">
+          <span class="blog-cat"><i class="fas fa-soap"></i> Washing Machine</span>
+          <h3><a href="blog/washing-machine-not-spinning.html">Washing Machine Not Spinning? Causes and What to Check</a></h3>
+          <p>Clothes coming out soaking wet? Find out why your washing machine won't spin and which checks to try first.</p>
+          <div class="blog-meta"><span><i class="far fa-clock"></i>6 min read</span><span><i class="far fa-calendar"></i>Updated October 2026</span></div>
+          <a href="blog/washing-machine-not-spinning.html" class="inline-link">Read the guide <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card" data-post-cat="washer">
+        <div class="blog-thumb"><img src="images/washing-not-draining.jpg" alt="Technician carrying out an on-site household appliance repair" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x396/1e293b/ffffff?text=Eazy+Appliance+Repairs'" /></div>
+        <div class="blog-body">
+          <span class="blog-cat"><i class="fas fa-water"></i> Washing Machine</span>
+          <h3><a href="blog/washing-machine-not-draining.html">Washing Machine Not Draining? Step-by-Step Fix</a></h3>
+          <p>Water stuck in the drum? Follow our step-by-step guide to clearing the pump filter and checking the drain hose safely.</p>
+          <div class="blog-meta"><span><i class="far fa-clock"></i>5 min read</span><span><i class="far fa-calendar"></i>Updated October 2026</span></div>
+          <a href="blog/washing-machine-not-draining.html" class="inline-link">Read the guide <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card" data-post-cat="dryer">
+        <div class="blog-thumb"><img src="images/tumble-dryer.jpg" alt="Technician carrying out an on-site household appliance repair" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x396/1e293b/ffffff?text=Eazy+Appliance+Repairs'" /></div>
+        <div class="blog-body">
+          <span class="blog-cat"><i class="fas fa-wind"></i> Tumble Dryer</span>
+          <h3><a href="blog/tumble-dryer-not-heating.html">Tumble Dryer Not Heating? Causes, Checks & Repairs</a></h3>
+          <p>The drum spins but clothes stay damp? Learn why dryers stop heating, and why blocked lint and vents matter.</p>
+          <div class="blog-meta"><span><i class="far fa-clock"></i>6 min read</span><span><i class="far fa-calendar"></i>Updated October 2026</span></div>
+          <a href="blog/tumble-dryer-not-heating.html" class="inline-link">Read the guide <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- HELP CTA -->
+<section class="content-band">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-copy">
+        <span class="badge-tag"><i class="fas fa-headset"></i> Still Stuck?</span>
+        <h2>Prefer a Technician to Take a Look?</h2>
+        <p>Not every fault is safe or sensible to tackle yourself. If you have worked through a guide and the problem remains, our certified technicians can diagnose and repair it on-site, usually in a single visit.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Same-day dispatch across Sandton, Randburg, Midrand and Rosebank</li>
+          <li><i class="fas fa-check-circle"></i> Upfront fixed quotes with no hidden fees</li>
+          <li><i class="fas fa-check-circle"></i> Genuine parts and a 6-month written warranty</li>
+        </ul>
+        <div class="hero-cta-group" style="justify-content:flex-start;margin:24px 0 0">
+          <a href="#booking" class="pill-btn primary"><i class="far fa-calendar-check"></i> Book On-Site Repair</a>
+          <a href="services.html" class="btn-secondary" style="color:#0f172a;border-color:#cbd5e1"><i class="fas fa-th-large"></i> View All Services</a>
+        </div>
+      </div>
+      <div class="split-media">
+        <div class="photo-card">
+          <img src="images/fridge-repair.jpg" alt="Technician carrying out an on-site household appliance repair" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/800x528/1e293b/ffffff?text=Eazy+Appliance+Repairs'" />
+          <div class="photo-note"><strong>CERTIFIED TECHNICIANS</strong><p>Every guide is written from real repair experience in Gauteng homes.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BOOKING SECTION -->
+<section id="booking" class="booking-section">
+  <div class="container">
+    <div class="booking-grid">
+
+      <div class="booking-info-col">
+        <span class="badge-tag light-blue">
+          <i class="fas fa-headset"></i> Immediate Dispatch
+        </span>
+        <h2>Need Help With an Appliance Fault?</h2>
+        <p class="booking-desc">Request a priority callback and a technician will talk you through your options and book your on-site repair.</p>
+
+        <div class="direct-call-box">
+          <div class="call-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="call-details">
+            <span class="call-label">Call Our Emergency Desk</span>
+            <a href="tel:+27110000000" class="call-number">+27 11 000 0000</a>
+          </div>
+        </div>
+
+        <ul class="booking-guarantees"><li><i class="fas fa-shield-alt text-blue"></i> 6-Month Written Parts & Labor Warranty</li><li><i class="fas fa-clock text-blue"></i> Same-Day Service Guarantee</li><li><i class="fas fa-coins text-blue"></i> No Hidden Call-Out Fees With Repairs</li></ul>
+      </div>
+
+      <div class="booking-form-col">
+        <div class="form-card">
+          <h3 class="form-title">Request a Fast Callback</h3>
+          <p class="form-subtitle">Fill in your details below and a technician will call you back within 15 minutes.</p>
+
+          <form id="blogBookingForm" class="booking-form" novalidate>
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="e.g. John Smith" required />
+              <span class="error-msg" id="nameError">Please enter your name</span>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="tel" id="phoneNumber" class="form-control" placeholder="e.g. 082 123 4567" required />
+              <span class="error-msg" id="phoneError">Please enter a valid South African contact number</span>
+            </div>
+
+            <div class="form-group">
+              <label for="suburbLocation">Suburb / Area</label>
+              <select id="suburbLocation" class="form-control" required>
+                <option value="" disabled selected>Select your area in Gauteng</option>
+                <option value="sandton">Sandton & Surrounds</option><option value="randburg">Randburg & Surrounds</option><option value="midrand">Midrand & Surrounds</option><option value="rosebank">Rosebank & Surrounds</option><option value="other">Other Johannesburg Suburb</option>
+              </select>
+              <span class="error-msg" id="areaError">Please select your service area</span>
+            </div>
+
+            <div class="form-group">
+              <label for="faultType">Appliance Needing Repair</label>
+              <select id="faultType" class="form-control" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="fridge">Fridge & Freezer</option><option value="washing-machine">Washing Machine</option><option value="tumble-dryer">Tumble Dryer</option><option value="dishwasher">Dishwasher</option><option value="other">Other Appliance</option>
+              </select>
+              <span class="error-msg" id="faultError">Please make a selection</span>
+            </div>
+
+            <button type="submit" class="pill-btn primary full-width">
+              <i class="fas fa-paper-plane"></i> Submit Callback Request
+            </button>
+
+            <div class="form-success-alert" id="successMessage">
+              <i class="fas fa-check-circle"></i> Request Received! A technician will call you back shortly.
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ <!-- ==========================================================================
+         Comprehensive Site Footer (Fixed Link Paths)
+         ========================================================================== -->
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-grid">
+            
+            <!-- Column 1: Brand Info -->
+            <div class="footer-col brand-col">
+              <div class="footer-logo">
+                <div class="logo-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                </div>
+                <span class="logo-brand-text">EAZY.<small>APPLIANCE REPAIRS</small></span>
+              </div>
+              <p class="footer-about">
+                Fast, reliable, and guaranteed household appliance repairs across Sandton, Randburg, Midrand, and Rosebank. Experienced field engineers working with authentic OEM parts.
+              </p>
+              <div class="footer-contact-details">
+                <p>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>+27 (0)11 000 0000</span>
+                </p>
+                <p>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>support@eazyappliancerepairs.co.za</span>
+                </p>
+                <p>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>Mon - Sat: 07:30 - 18:00</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Column 2: Service Links -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Appliance Services</h4>
+              <ul class="footer-links">
+                <li><a href="fridge-repairs.html">Fridge & Freezer Repairs</a></li>
+                <li><a href="washing-machine-repairs.html">Washing Machine Repairs</a></li>
+                <li><a href="tumble-dryer-repairs.html">Tumble Dryer Repairs</a></li>
+                <li><a href="dishwasher-repairs.html">Dishwasher Repairs</a></li>
+                <li><a href="oven-stove-repairs.html">Oven & Stove Repairs</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Top Service Areas -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Service Hubs</h4>
+              <ul class="footer-links">
+                <li><a href="areas/sandton.html">Sandton Appliance Repairs</a></li>
+                <li><a href="areas/randburg.html">Randburg Appliance Repairs</a></li>
+                <li><a href="areas/midrand.html">Midrand Appliance Repairs</a></li>
+                <li><a href="areas/rosebank.html">Rosebank Appliance Repairs</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 4: Major Brands -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Supported Brands</h4>
+              <ul class="footer-links">
+                <li><a href="brands/samsung.html">Samsung Diagnostics</a></li>
+                <li><a href="brands/lg.html">LG Appliance Support</a></li>
+                <li><a href="brands/bosch.html">Bosch Serie 4, 6 & 8</a></li>
+                <li><a href="brands/defy.html">Defy Repairs</a></li>
+                <li><a href="brands/whirlpool.html">Whirlpool & Smeg</a></li>
+                <li><a href="brands/speed-queen.html">Speed Queen Commercial</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Bottom Copyright Strip -->
+          <div class="footer-bottom-bar">
+            <p>&copy; 2026 Eazy Appliance Repairs. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>•</span>
+              <a href="terms-and-conditions.html">Terms of Service</a>
+              <span>•</span>
+              <a href="sitemap.xml">Sitemap</a>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="pages.js"></script>
+  </body>
+</html>
